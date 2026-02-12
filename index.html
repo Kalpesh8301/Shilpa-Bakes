@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHILPA Bake House & Fast Food Centre | प्रीमियम बेकरी</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+        :root {
+            --primary-red: #D32F2F;
+            --gold: linear-gradient(45deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            --dark-gold: #AA771C;
+            --white: #ffffff;
+            --black: #1a1a1a;
+            --soft-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+        }
+
+        body {
+            background-color: #fff9f9;
+            color: var(--black);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- Custom Scrollbar --- */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: var(--primary-red); border-radius: 10px; }
+
+        /* --- Premium Animated Logo --- */
+        .logo-text {
+            font-size: 4rem;
+            font-weight: 800;
+            background: var(--gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+            letter-spacing: 4px;
+            animation: breathe 4s ease-in-out infinite;
+            filter: drop-shadow(0 5px 15px rgba(184, 138, 68, 0.3));
+        }
+
+        .logo-text::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+            left: -100%;
+            top: 0;
+            animation: shine 3.5s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            letter-spacing: 5px;
+            margin: 20px 0;
+            color: #f1f1f1;
+            text-transform: uppercase;
+        }
+
+        .btn-group {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary-red);
+            color: white;
+            box-shadow: 0 10px 20px rgba(211, 47, 47, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+            background: transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            filter: brightness(1.1);
+        }
+
+        /* --- Section Styling --- */
+        section { padding: 100px 10%; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { 
+            font-size: 2.8rem; 
+            color: var(--primary-red);
+            margin-bottom: 15px;
+        }
+
+        /* --- Menu Cards --- */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-card {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: var(--soft-shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(184, 138, 68, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--dark-gold);
+        }
+
+        .menu-card i {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        .order-now {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .order-now:hover { background: #128c7e; }
+
+        /* --- Gallery --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: 0.6s;
+        }
+
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        /* --- Payment Section --- */
+        .payment-box {
+            background: white;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: var(--soft-shadow);
+            border: 2px solid #f1f1f1;
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border: 10px solid #f9f9f9;
+            border-radius: 15px;
+        }
+
+        /* --- Contact --- */
+        .footer-dark {
+            background: #111;
+            color: white;
+            padding: 60px 10% 20px;
+            text-align: center;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            z-index: 1000;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            animation: breathe 3s infinite;
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 768px) {
+            .logo-text { font-size: 2.8rem; }
+            .section-header h2 { font-size: 2.2rem; }
+            .hero { height: auto; padding: 100px 20px; }
+            .btn-group { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div data-aos="zoom-in">
+            <h1 class="logo-text">SHILPA</h1>
+            <p style="color: #FCF6BA; font-weight: 600; font-size: 1.2rem; margin-top: -10px;">BAKE HOUSE & FAST FOOD</p>
+            <p class="tagline">ताजे • चविष्ट • स्वच्छ</p>
+            <div class="btn-group">
+                <a href="#menu" class="btn btn-primary">ऑर्डर पहा</a>
+                <a href="tel:8485042254" class="btn btn-outline">कॉल करा</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" data-aos="fade-up">
+        <div class="section-header">
+            <h2>आमच्याबद्दल</h2>
+            <div style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: #555;">
+                <p>SHILPA Bake House मध्ये आम्ही प्रत्येक पदार्थ <b>शुद्धता आणि स्वच्छतेची</b> पूर्ण काळजी घेऊन बनवतो. घरगुती चव आणि हाय-क्वालिटी मटेरियल हीच आमची ओळख आहे. मु. पो. चळे परिसरातील सर्वात विश्वसनीय बेकरी आणि फास्ट फूड सेंटर.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu">
+        <div class="section-header" data-aos="fade-up">
+            <h2>आमचा खास मेनू</h2>
+            <p>खालीलपैकी कोणताही पदार्थ ऑर्डर करण्यासाठी बटणावर क्लिक करा</p>
+        </div>
+        
+        <div class="menu-grid">
+            <div class="menu-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-pizza-slice"></i>
+                <h3>स्पेशल पिझ्झा</h3>
+                <p>व्हेज, चीज, पनीर आणि स्वीट कॉर्न पिझ्झा</p>
+                <a href="https://wa.me/918485042254?text=नमस्ते, मला 'पिझ्झा' ऑर्डर करायचा आहे." target="_blank" class="order-now">
+                    <i class="fab fa-whatsapp"></i> ऑर्डर करा
+                </a>
+            </div>
+
+            <div class="menu-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-birthday-cake"></i>
+                <h3>केक आणि पेस्ट्री</h3>
+                <p>बर्थडे केक, आईस केक आणि ताजी पेस्ट्री</p>
+                <a href="https://wa.me/918485042254?text=नमस्ते, मला 'केक' ऑर्डर करायचा आहे." target="_blank" class="order-now">
+                    <i class="fab fa-whatsapp"></i> ऑर्डर करा
+                </a>
+            </div>
+
+            <div class="menu-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-bowl-food"></i>
+                <h3>चायनीज डिशेस</h3>
+                <p>नूडल्स, मंचुरियन आणि फ्राइड राईस</p>
+                <a href="https://wa.me/918485042254?text=नमस्ते, मला 'चायनीज' ऑर्डर करायचा आहे." target="_blank" class="order-now">
+                    <i class="fab fa-whatsapp"></i> ऑर्डर करा
+                </a>
+            </div>
+
+            <div class="menu-card" data-aos="fade-up" data-aos-delay="400">
+                <i class="fas fa-hamburger"></i>
+                <h3>बर्गर आणि सँडविच</h3>
+                <p>ताजे व्हेज बर्गर आणि ग्रील्ड सँडविच</p>
+                <a href="https://wa.me/918485042254?text=नमस्ते, मला 'बर्गर/सँडविच' ऑर्डर करायचा आहे." target="_blank" class="order-now">
+                    <i class="fab fa-whatsapp"></i> ऑर्डर करा
+                </a>
+            </div>
+
+            <div class="menu-card" data-aos="fade-up" data-aos-delay="500">
+                <i class="fas fa-bread-slice"></i>
+                <h3>बेकरी आयटम्स</h3>
+                <p>डोनट, ब्रेड, रस्क आणि बिस्किटे</p>
+                <a href="https://wa.me/918485042254?text=नमस्ते, मला 'बेकरी आयटम्स' ऑर्डर करायचे आहेत." target="_blank" class="order-now">
+                    <i class="fab fa-whatsapp"></i> ऑर्डर करा
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="section-header" data-aos="fade-up">
+            <h2>फूड गॅलरी</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-aos="zoom-in"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=60"></div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=60"></div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=60"></div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300"><img src="https://images.unsplash.com/photo-1551106652-a5bcf4b29ab6?auto=format&fit=crop&w=600&q=60"></div>
+        </div>
+    </section>
+
+    <section id="payment" style="background: #fff0f0;">
+        <div class="section-header" data-aos="fade-up">
+            <h2>पेमेंट माहिती</h2>
+        </div>
+        <div class="payment-box" data-aos="flip-left">
+            <p>आम्ही <b>Cash on Delivery</b> आणि <b>UPI</b> स्वीकारतो.</p>
+            <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=swapnil.pore90@oksbi&pn=Shilpa%20Bake%20House" alt="UPI QR Code">
+            <h3 style="color: var(--dark-gold);">UPI ID: swapnil.pore90@oksbi</h3>
+            <p style="margin-top: 20px; font-size: 0.9rem; border-top: 1px solid #eee; pt: 15px;">
+                <i class="fas fa-check-circle" style="color: green;"></i> पेमेंट झाल्यावर स्क्रीनशॉट WhatsApp करा.
+            </p>
+        </div>
+    </section>
+
+    <footer class="footer-dark">
+        <div class="section-header" style="margin-bottom: 30px;">
+            <h2 style="color: #FCF6BA;">संपर्क करा</h2>
+            <p><i class="fas fa-map-marker-alt"></i> मु. पो. चळे, ता. पंढरपूर, जि. सोलापूर</p>
+            <p><i class="fas fa-phone-alt"></i> 8485042254 / 9922580674</p>
+        </div>
+        
+        <div style="width: 100%; height: 250px; border-radius: 20px; overflow: hidden; margin-bottom: 30px;">
+            <iframe width="100%" height="100%" frameborder="0" src="https://maps.google.com/maps?q=Chale,Pandharpur,Solapur&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+
+        <p style="opacity: 0.6; font-size: 0.8rem;">SHILPA Bake House & Fast Food Centre | सर्व हक्क राखीव © 2024</p>
+    </footer>
+
+    <a href="https://wa.me/918485042254" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+
+</body>
+</html>
+
